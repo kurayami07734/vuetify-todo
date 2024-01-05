@@ -17,6 +17,22 @@ const routes = [
       title: "New notes",
     },
   },
+  {
+    path: "/login/",
+    name: "login",
+    component: () => import("../views/LoginView.vue"),
+    meta: {
+      title: "Login",
+    },
+  },
+  {
+    path: "/user/:uid",
+    name: "user",
+    component: () => import("../views/AccountView.vue"),
+    meta: {
+      title: "My account",
+    },
+  },
 ];
 
 export const router = createRouter({
@@ -24,12 +40,6 @@ export const router = createRouter({
   routes,
 });
 router.beforeEach((to, from, next) => {
-  const titleFromParams = to.params?.pageTitle;
-
-  if (titleFromParams) {
-    document.title = `${titleFromParams} - ${document.title}`;
-  } else {
-    document.title = to.meta?.title ?? from.meta?.title ?? "Todos";
-  }
+  document.title = to.meta?.title ?? from.meta?.title ?? "Todos";
   next();
 });
