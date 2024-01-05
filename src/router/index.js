@@ -26,8 +26,8 @@ const routes = [
     },
   },
   {
-    path: "/user/:uid",
-    name: "user",
+    path: "/my-account/",
+    name: "my-account",
     component: () => import("../views/AccountView.vue"),
     meta: {
       title: "My account",

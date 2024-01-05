@@ -7,7 +7,6 @@
 // Plugins
 import { registerPlugins } from "@/plugins";
 import { initializeApp } from "firebase/app";
-import firebase from "firebase/compat/app";
 import { GoogleAuthProvider, getAuth } from "firebase/auth";
 
 // Components
@@ -21,8 +20,6 @@ const firebaseConfig = {
   appId: import.meta.env.VITE_APP_APP_ID,
 };
 
-console.log(firebaseConfig);
-
 // Router
 import { router } from "./router/index";
 
@@ -32,9 +29,10 @@ import { createApp } from "vue";
 
 const pinia = createPinia();
 
-export const firebaseApp = !firebase.apps.length
-  ? initializeApp(firebaseConfig)
-  : null;
+export let firebaseApp = null;
+if (!firebaseApp) {
+  firebaseApp = initializeApp(firebaseConfig);
+}
 
 export const auth = getAuth();
 export const googleAuthProvider = new GoogleAuthProvider();
