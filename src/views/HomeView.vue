@@ -2,10 +2,9 @@
   <v-container class="fill-height" fluid>
     <v-row align="center" justify="center">
       <v-col cols="12" sm="8" md="4">
-        <v-card flat>
+        <v-card flat v-if="!user.userId">
           <div class="text-h2">Welcome!</div>
-          <p v-if="user.userId">{{ user.displayName }}</p>
-          <p v-else>Login through burger menu</p>
+          <p>Login through burger menu</p>
         </v-card>
       </v-col>
     </v-row>
@@ -14,6 +13,8 @@
 
 <script setup>
 import { useUserStore } from "../stores/user.store";
+import { useRouter } from "vue-router";
 const user = useUserStore();
+const router = useRouter();
+if (user.userId) router.push("/all-notes");
 </script>
-../stores/user.store

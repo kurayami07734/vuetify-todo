@@ -29,7 +29,7 @@ function loginWithGoogle() {
   signInWithPopup(auth, googleAuthProvider)
     .then((res) => {
       user.login(res.user);
-      router.push(`/my-account`);
+      router.push(`/`);
     })
     .catch((e) => console.error(e.toString()));
 }

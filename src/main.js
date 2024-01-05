@@ -7,6 +7,7 @@
 // Plugins
 import { registerPlugins } from "@/plugins";
 import { initializeApp } from "firebase/app";
+import { getFirestore, collection } from "firebase/firestore";
 import { GoogleAuthProvider, getAuth } from "firebase/auth";
 
 // Components
@@ -34,6 +35,8 @@ if (!firebaseApp) {
   firebaseApp = initializeApp(firebaseConfig);
 }
 
+export const db = getFirestore();
+export const notesCollection = collection(db, "notes");
 export const auth = getAuth();
 export const googleAuthProvider = new GoogleAuthProvider();
 const app = createApp(App);

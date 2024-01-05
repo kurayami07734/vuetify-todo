@@ -1,7 +1,9 @@
 <template>
   <v-app-bar color="primary">
     <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-    <v-toolbar-title @click="$router.push('/')">My Notes</v-toolbar-title>
+    <v-toolbar-title @click="$router.push('/')">{{
+      $route.meta.title
+    }}</v-toolbar-title>
     <v-spacer />
     <v-btn variant="text" icon="mdi-plus" to="/new-note/" />
   </v-app-bar>

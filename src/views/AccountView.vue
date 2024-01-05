@@ -21,11 +21,14 @@
 <script setup>
 import { useRouter } from "vue-router";
 import { useUserStore } from "../stores/user.store";
+import { onMounted } from "vue";
 const user = useUserStore();
 const router = useRouter();
+onMounted(() => {
+  if (!user.userId) router.push("/login");
+});
 function logout() {
   user.logout();
   router.push("/login");
 }
 </script>
-../stores/user.store

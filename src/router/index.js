@@ -33,6 +33,14 @@ const routes = [
       title: "My account",
     },
   },
+  {
+    path: "/all-notes/",
+    name: "all-notes",
+    component: () => import("../views/AllNotesView.vue"),
+    meta: {
+      title: "All Notes",
+    },
+  },
 ];
 
 export const router = createRouter({
