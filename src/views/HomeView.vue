@@ -3,8 +3,12 @@
     <v-row align="center" justify="center">
       <v-col cols="12" sm="8" md="4">
         <v-card flat v-if="!user.userId">
-          <div class="text-h2">Welcome!</div>
-          <p>Login through burger menu</p>
+          <v-card-title>
+            <div class="text-h2">Welcome!</div>
+          </v-card-title>
+          <v-card-text>
+            <p>Login through burger menu</p>
+          </v-card-text>
         </v-card>
       </v-col>
     </v-row>

@@ -22,9 +22,11 @@
 import { useRouter } from "vue-router";
 import { auth, googleAuthProvider } from "../main";
 import { useUserStore } from "../stores/user.store";
+import { signInWithPopup } from "firebase/auth";
+
 const router = useRouter();
 const user = useUserStore();
-import { signInWithPopup } from "firebase/auth";
+
 function loginWithGoogle() {
   signInWithPopup(auth, googleAuthProvider)
     .then((res) => {

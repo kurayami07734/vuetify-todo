@@ -2,9 +2,14 @@
   <v-list>
     <v-list-item v-if="!isLoading && todos.length > 0" v-for="todo in todos">
       <v-card>
-        <v-card-title>
+        <v-card-title class="text-h3">
           {{ todo.title }}
         </v-card-title>
+        <v-card-subtitle>
+          <v-chip-group>
+            <v-chip v-for="tag in todo.tags"> {{ tag }}</v-chip>
+          </v-chip-group>
+        </v-card-subtitle>
         <v-card-text>
           <div v-if="todo.text.length > 50">
             {{ todo.text.slice(0, 50) }} ...
