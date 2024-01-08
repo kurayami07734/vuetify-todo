@@ -10,11 +10,11 @@ const routes = [
     },
   },
   {
-    path: "/new-note/",
-    name: "new-note",
-    component: () => import("../views/NewNoteView.vue"),
+    path: "/new-todo/",
+    name: "new-todo",
+    component: () => import("../views/NewTodoView.vue"),
     meta: {
-      title: "New notes",
+      title: "New Todo",
     },
   },
   {
@@ -34,11 +34,11 @@ const routes = [
     },
   },
   {
-    path: "/all-notes/",
-    name: "all-notes",
-    component: () => import("../views/AllNotesView.vue"),
+    path: "/all-todos/",
+    name: "all-todos",
+    component: () => import("../views/AllTodosView.vue"),
     meta: {
-      title: "All Notes",
+      title: "All Todos",
     },
   },
 ];

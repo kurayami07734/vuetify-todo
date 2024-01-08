@@ -36,7 +36,7 @@ if (!firebaseApp) {
 }
 
 export const db = getFirestore();
-export const notesCollection = collection(db, "notes");
+export const todosCollection = collection(db, "todos");
 export const auth = getAuth();
 export const googleAuthProvider = new GoogleAuthProvider();
 const app = createApp(App);

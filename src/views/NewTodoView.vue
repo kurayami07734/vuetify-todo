@@ -43,6 +43,7 @@ async function saveNote() {
       owner: user.userId,
       title: title.value,
       text: text.value,
+      createdAt: new Date().now(),
     });
     router.push("/");
   } catch (e) {
