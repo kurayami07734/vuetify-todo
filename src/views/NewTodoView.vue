@@ -28,7 +28,7 @@
 </template>
 
 <script setup>
-import { notesCollection } from "../main";
+import { todosCollection } from "../main";
 import { addDoc } from "firebase/firestore";
 import { useUserStore } from "@/stores/user.store";
 import { useRouter } from "vue-router";
@@ -39,7 +39,7 @@ const title = ref("");
 const text = ref("");
 async function saveNote() {
   try {
-    await addDoc(notesCollection, {
+    await addDoc(todosCollection, {
       owner: user.userId,
       title: title.value,
       text: text.value,
