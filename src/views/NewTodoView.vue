@@ -16,12 +16,12 @@
             <v-btn @click="saveNote">Save</v-btn>
           </v-card-actions>
         </v-card>
-        <v-card align="center" justify="center" class="ma-2 pa-2" v-else>
+        <v-card-text v-else align="center" justify="center" class="ma-2 pa-2">
           <v-card-title> Login to make notes</v-card-title>
           <v-card flat align="center" justify="center" class="ma-2 pa-2">
-            <v-btn to="/login">login</v-btn>
+            <v-btn to="/login" color="primary">login</v-btn>
           </v-card>
-        </v-card>
+        </v-card-text>
       </v-col>
     </v-row>
   </v-container>

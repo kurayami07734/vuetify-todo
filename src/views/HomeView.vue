@@ -13,8 +13,5 @@
 
 <script setup>
 import { useUserStore } from "../stores/user.store";
-import { useRouter } from "vue-router";
 const user = useUserStore();
-const router = useRouter();
-if (user.userId) router.push("/all-notes");
 </script>

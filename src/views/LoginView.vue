@@ -2,16 +2,16 @@
   <v-container class="fill-height ma-2 pa-2" fluid>
     <v-row align="center" justify="center">
       <v-col cols="12" sm="8" md="4">
-        <v-card align="center" justify="center" class="ma-2 pa-2">
+        <v-card align="center" justify="center" class="ma-2 pa-2" flat>
           <v-card-title class="text-h4"> Login </v-card-title>
-          <v-card flat align="center" justify="center" class="ma-2 pa-2">
+          <v-card-text flat align="center" justify="center" class="ma-2 pa-2">
             <v-btn
               @click="loginWithGoogle"
               color="primary"
               prepend-icon="mdi-google"
               >Continue with google</v-btn
             >
-          </v-card>
+          </v-card-text>
         </v-card>
       </v-col>
     </v-row>
@@ -29,9 +29,8 @@ function loginWithGoogle() {
   signInWithPopup(auth, googleAuthProvider)
     .then((res) => {
       user.login(res.user);
-      router.push(`/`);
+      router.push(`/all-todos/`);
     })
     .catch((e) => console.error(e.toString()));
 }
 </script>
-../stores/user.store
