@@ -1,9 +1,7 @@
 <template>
   <v-app-bar color="primary">
     <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-    <v-toolbar-title @click="$router.push('/')">{{
-      $route.meta.title
-    }}</v-toolbar-title>
+    <v-toolbar-title @click="goHome">{{ $route.meta.title }}</v-toolbar-title>
     <v-spacer />
     <v-btn variant="text" icon="mdi-plus" to="/new-todo/" />
   </v-app-bar>
@@ -19,7 +17,12 @@
 <script setup>
 import { ref } from "vue";
 import { useUserStore } from "../stores/user.store";
+import { useRouter } from "vue-router";
+const router = useRouter();
 const user = useUserStore();
 const drawer = ref(false);
+function goHome() {
+  if (!user.userId) router.push("/");
+  else router.push("/all-todos");
+}
 </script>
-../stores/user.store

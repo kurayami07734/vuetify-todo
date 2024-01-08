@@ -13,10 +13,12 @@ import {
   getAuth,
   setPersistence,
   browserSessionPersistence,
+  onAuthStateChanged,
 } from "firebase/auth";
 
 // Router
 import { router } from "./router/index";
+import { useUserStore } from "./stores/user.store";
 
 // Composables
 import { createPinia } from "pinia";
@@ -44,6 +46,7 @@ export const db = getFirestore();
 export const todosCollection = collection(db, "todos");
 export const auth = getAuth();
 export const googleAuthProvider = new GoogleAuthProvider();
+
 setPersistence(auth, browserSessionPersistence);
 
 const pinia = createPinia();
